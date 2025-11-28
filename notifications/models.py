@@ -34,7 +34,7 @@ class Notification(models.Model):
     channels_chain = models.JSONField(default=default_channels)
     
     def __str__(self):
-        return f'Уведомление {self.id} для {self.user}'
+        return f'Уведомление {self.id} для {self.recipient}'
     
     
     
