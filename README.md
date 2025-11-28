@@ -19,7 +19,7 @@
 
 ## Технологический стек
 * **Python 3.12** + Django 5 + DRF
-* **Celery** + Redis
+* **Celery + Redis**
 * **PostgreSQL 15**
 * **Docker** & Docker Compose
 
@@ -103,7 +103,7 @@ curl -X POST http://localhost:8000/api/send/ \
 docker compose logs -f worker
 ```
 
-## Мониторинг и Админка
+## Мониторинг и Админ-панель
 В панели администратора реализован удобный дашборд для отслеживания статусов.
 Логи попыток отправки (какой канал, статус, ошибка) отображаются **Inline** — прямо внутри карточки уведомления.
 
@@ -117,3 +117,18 @@ docker compose logs -f worker
 docker compose exec web python manage.py test
 ```
 
+---
+
+## Скриншоты работы
+
+### 1. Админ-панель: Список уведомлений
+Видно статусы и каналы отправки (смешанные email/sms/telegram).
+![Dashboard](docs/images/admin_dashboard.png)
+
+### 2. Детальный просмотр: Логика Failover
+Демонстрация работы алгоритма: попытка в Telegram (ошибка) -> Email (ошибка сети) -> SMS (успех).
+![Failover Logs](docs/images/admin_logs_detail.png)
+
+### 3. Логи воркера (Terminal)
+Техническое подтверждение асинхронной обработки задач.
+![Worker Logs](docs/images/terminal_logs.png)
