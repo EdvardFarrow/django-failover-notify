@@ -6,7 +6,9 @@ click==8.3.1
 click-didyoumean==0.3.1
 click-plugins==1.1.1.2
 click-repl==0.3.0
+dj-database-url==3.0.1
 Django==5.2.8
+djangorestframework==3.16.1
 kombu==5.5.4
 packaging==25.0
 postgres==4.0
@@ -15,6 +17,7 @@ psycopg2-binary==2.9.11
 psycopg2-pool==1.2
 python-dateutil==2.9.0.post0
 python-decouple==3.8
+redis==7.1.0
 six==1.17.0
 sqlparse==0.5.4
 tzdata==2025.2

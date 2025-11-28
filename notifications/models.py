@@ -25,7 +25,7 @@ class Notification(models.Model):
         ('failed', 'Не отправлено'),
     ]
     
-    user = models.ForeignKey(Recipient, on_delete=models.CASCADE, related_name='notifications')
+    recipient = models.ForeignKey(Recipient, on_delete=models.CASCADE, related_name='notifications')
     message = models.TextField()
     status = models.CharField(choices=STATUS_CHOICES, default='pending', max_length=20)   
     created_at = models.DateTimeField(auto_now_add=True)

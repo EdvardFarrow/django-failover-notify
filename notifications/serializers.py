@@ -16,10 +16,10 @@ class NotificationSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Notification
-        fields = ['recipient', 'message', 'channels_order']
+        fields = ['recipient', 'message', 'channels_chain']
         
     def validate_channels_chain(self, value):
         for channel in value:
             if channel not in VALID_CHANNELS:
-                raise serializers.ValidationError(f"Unknown channel: {channel}")
+                raise serializers.ValidationError(f"Неизвестный канал: {channel}")
         return value
