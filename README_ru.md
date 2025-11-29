@@ -1,5 +1,7 @@
 [![Django CI](https://github.com/EdvardFarrow/django-failover-notify/actions/workflows/ci.yml/badge.svg)](https://github.com/EdvardFarrow/django-failover-notify/actions/workflows/ci.yml)
 
+[![en](https://img.shields.io/badge/lang-en-grey.svg)](README.md)
+
 # Failover Notification Service
 
 Микросервис для рассылки уведомлений с каскадной логикой доставки (Telegram → Email → SMS).
@@ -132,3 +134,4 @@ docker compose exec web python manage.py test
 ### 3. Логи воркера (Terminal)
 Техническое подтверждение асинхронной обработки задач.
 ![Worker Logs](docs/images/terminal_logs.png)
+
